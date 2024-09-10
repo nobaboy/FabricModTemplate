@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "fabricmodtemplate",
+  "version": "${version}",
+  "name": "FabricModTemplate",
+  "description": "",
+  "authors": [
+    "nobaboy"
+  ],
+  "contact": {
+    "sources": "https://github.com/nobaboy/FabricModTemplate",
+    "issues": "https://github.com/nobaboy/FabricModTemplate/issues"
+  },
+  "license": "LGPL-3.0-or-later",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "value": "me.nobaboy.fabricmodtemplate.FabricModTemplate",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": [
+    "fabricmodtemplate.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "fabric-api": "*",
+    "fabric_language_kotlin": "*",
+    "minecraft": "$mcdep"
+  }
+}
