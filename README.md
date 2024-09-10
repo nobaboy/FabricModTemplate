@@ -42,4 +42,4 @@ Unfortunately, you can't fully opt out of mixins (which allow you to modify vani
 
 This template is licensed under the [Unlicense](/LICENSE) or alternativly, [Creative Commons 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/). All contributions and pull requests to this template should follow these licenses.
 
-You can license your mod (based on this template) however you like, and you to reference back to this template in any way.
+You can license your mod (based on this template) however you like, and you don't need to reference back to this template in any way.
