@@ -11,7 +11,7 @@
     "sources": "https://github.com/nobaboy/FabricModTemplate",
     "issues": "https://github.com/nobaboy/FabricModTemplate/issues"
   },
-  "license": "LGPL-3.0-or-later",
+  "license": "",
   "environment": "client",
   "entrypoints": {
     "client": [

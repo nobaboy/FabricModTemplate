@@ -58,7 +58,10 @@ echo "Setting package dir to $package_dir"
     "$base"/src/main/resources/fabric.mod.json
 
   # Update and rename fabricmodtemplate.mixins.json
-  sed -i "s/fabricmodtemplate/$modid/g" "$base"/src/main/resources/fabricmodtemplate.mixins.json
+  sed -i \
+    -e "s/fabricmodtemplate/$modid/g" \
+    -e "s/nobaboy/$project_owner/g" \
+    "$base"/src/main/resources/fabricmodtemplate.mixins.json
   mv "$base"/src/main/resources/fabricmodtemplate.mixins.json "$base"/src/main/resources/"$modid".mixins.json
 
   # Remove the init workflow script
