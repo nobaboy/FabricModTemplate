@@ -24,8 +24,8 @@ group = mod.group
 base { archivesName.set(mod.id) }
 
 repositories {
-    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1") // DevAuth
-    maven("https://maven.celestialfault.dev/snapshots") // CelestialConfig
+    // If you don't want DevAuth remove this line
+    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
 
 dependencies {
@@ -36,9 +36,7 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${deps["fabric_api"]}+${mcVersion}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${deps["kotlin"]}")
 
-    implementation("me.celestialfault:celestial-config:${deps["celestialconfig"]}")
-    include("me.celestialfault:celestial-config:${deps["celestialconfig"]}")
-
+    // If you don't want DevAuth remove this line
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${deps["devauth"]}")
 }
 

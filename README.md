@@ -16,7 +16,7 @@ For starters, [Use this template](https://github.com/new?template_name=FabricMod
 > [!WARNING]
 > Do not Fork, Clone, or Download ZIP this template. Using this template will automatically generate a custom mod id. On Linux, you can manually configure this using the `make-my-own` script. If you're on another OS, simply click the "Use this template" button.
 
-This template uses [Stonecutter](https://stonecutter.kikugie.dev/stonecutter/launch/) for multi-version support and [DevAuth](https://github.com/DJtheRedstoner/DevAut/) for logging in with your Mineraft account (if desired, you can opt out of using DevAuth by removing it from the buildscript).
+This template uses [Stonecutter](https://stonecutter.kikugie.dev/stonecutter/launch/) for multi-version support and [DevAuth](https://github.com/DJtheRedstoner/DevAut/) for logging in with your Mineraft account (if desired, you can opt out of using DevAuth by removing it from `build.gradle.kts`).
 
 To run the mod, you will need Java 21, which you can download from [Adoptium](https://adoptium.net/temurin/releases/), ~~the white page of doom~~ [Oracle](https://www.oracle.com/java/technologies/downloads/), or any other preferred source.
 
