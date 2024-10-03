@@ -47,7 +47,7 @@ echo "Setting package dir to $package_dir"
   sed -i \
     -e "s/fabricmodtemplate/$modid/g" \
     -e "s/nobaboy/$project_owner/g" \
-    "$base"/src/main/java/me/nobaboy/fabricmodtemplate/ClientMixin.java
+    "$base"/src/main/java/me/nobaboy/fabricmodtemplate/mixins/ClientMixin.java
 
   # Rename directories
   # Kotlin dir
