@@ -47,15 +47,15 @@ loom {
     }
 }
 
-val javaVersion = if (stonecutter.compare(mcVersion, "1.20.6") >= 0) 21 else 17
+val java = if (stonecutter.compare(mcVersion, "1.20.6") >= 0) 21 else 17
 
 java {
-    targetCompatibility = JavaVersion.toVersion(javaVersion)
-    sourceCompatibility = JavaVersion.toVersion(javaVersion)
+    targetCompatibility = JavaVersion.toVersion(java)
+    sourceCompatibility = JavaVersion.toVersion(java)
 }
 
 kotlin {
-    jvmToolchain(javaVersion)
+    jvmToolchain(java)
 }
 
 tasks.processResources {
