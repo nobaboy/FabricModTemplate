@@ -35,12 +35,19 @@ dependencies {
 
     modImplementation("net.fabricmc.fabric-api:fabric-api:${deps["fabric_api"]}+${mcVersion}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${deps["kotlin"]}")
+    vineflowerDecompilerClasspath("org.vineflower:vineflower:1.10.1")
 
     // If you don't want DevAuth remove this line
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:${deps["devauth"]}")
 }
 
 loom {
+    decompilers {
+        get("vineflower").apply { // Adds names to lambdas - useful for mixins
+            options.put("mark-corresponding-synthetics", "1")
+        }
+    }
+
     runConfigs.all {
         ideConfigGenerated(stonecutter.current.isActive)
         runDir = "../../run"
