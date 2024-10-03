@@ -1,3 +1,5 @@
+package me.nobaboy.fabricmodtemplate
+
 import com.mojang.logging.LogUtils
 import kotlinx.coroutines.*
 import net.fabricmc.api.ClientModInitializer

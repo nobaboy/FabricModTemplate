@@ -1,4 +1,4 @@
-package com.example.mixin.client;
+package me.nobaboy.fabricmodtemplate.mixins;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

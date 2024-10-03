@@ -36,19 +36,29 @@ echo "Setting package dir to $package_dir"
   # Update settings.gradle.kts
   sed -i "s/rootProject.name = \"FabricModTemplate\"/rootProject.name = \"$modid\"/" "$base"/settings.gradle.kts
 
-  # Update and rename the main .kt file
-  sed -i "s/FabricModTemplate/$project_name/g" "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt
-  mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/"$project_name.kt"
+  # Update main .kt file
+  sed -i \
+    -e "s/fabricmodtemplate/$modid/g" \
+    -e "s/FabricModTemplate/$project_name/g" \
+    -e "s/nobaboy/$project_owner/g" \
+    "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt
+
+  # Update the mixin file
+  sed -i \
+    -e "s/fabricmodtemplate/$modid/g" \
+    -e "s/nobaboy/$project_owner/g" \
+    "$base"/src/main/java/me/nobaboy/fabricmodtemplate/ClientMixin.java
 
   # Rename directories
+  # Kotlin dir
+  mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/"$project_name.kt"
+  mkdir -p "$base"/src/main/kotlin/"$package_dir"
+  mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/* "$base"/src/main/kotlin/"$package_dir"
+  rm -r "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate
   # Java dir
   mkdir -p "$base"/src/main/java/"$package_dir"
   mv "$base"/src/main/java/me/nobaboy/fabricmodtemplate/* "$base"/src/main/java/"$package_dir"
   rm -r "$base"/src/main/java/me/nobaboy/fabricmodtemplate
-  # Kotlin dir
-  mkdir -p "$base"/src/main/kotlin/"$package_dir"
-  mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/* "$base"/src/main/kotlin/"$package_dir"
-  rm -r "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate
 
   # Update fabric.mod.json
   sed -i \
