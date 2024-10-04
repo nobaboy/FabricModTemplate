@@ -42,6 +42,7 @@ echo "Setting package dir to $package_dir"
     -e "s/FabricModTemplate/$project_name/g" \
     -e "s/nobaboy/$project_owner/g" \
     "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt
+  mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/"$project_name.kt"
 
   # Update the mixin file
   sed -i \
@@ -51,7 +52,6 @@ echo "Setting package dir to $package_dir"
 
   # Rename directories
   # Kotlin dir
-  mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/FabricModTemplate.kt "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/"$project_name.kt"
   mkdir -p "$base"/src/main/kotlin/"$package_dir"
   mv "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate/* "$base"/src/main/kotlin/"$package_dir"
   rm -r "$base"/src/main/kotlin/me/nobaboy/fabricmodtemplate

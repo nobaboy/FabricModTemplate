@@ -50,6 +50,7 @@ loom {
 
     runConfigs.all {
         ideConfigGenerated(stonecutter.current.isActive)
+        vmArgs("-Dmixin.debug.export=true")
         runDir = "../../run"
     }
 }
