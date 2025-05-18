@@ -36,10 +36,9 @@ Under the `stonecutter` group you will see multiple tasks:
 
 In the `project` group you will see `chiseledBuild`, which is the task you will use to export your mod versions as JAR files.
 
-Unfortunately, you can't fully opt out of mixins (which allow you to modify vanilla code), but you can choose to not use them, simply remove the `mixins` group in `fabric.mod.json`, the `modid.mixins.json` file (both can be found in `src/main/resources`), and the `mixins` package in `src/main/java/me/yourname`.
+Unfortunately, you can't fully opt out of mixins (which allow you to modify vanilla code), but you can choose to not use them, simply remove the `mixins` group in `fabric.mod.json`, the `modid.mixins.json` file (both can be found in `src/main/resources`), and the `mixins` package in `src/main/java/me/username`.
 
 ## License
 
-This template is licensed under the [Unlicense](/LICENSE) or alternativly, [Creative Commons 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/). All contributions and pull requests to this template should follow these licenses.
-
+This template is licensed under the [Unlicense](/LICENSE).<br>
 You can license your mod (based on this template) however you like, and you don't need to reference back to this template in any way.
