@@ -1,6 +1,6 @@
 plugins {
     id("fabric-loom")
-    kotlin("jvm") version("2.0.20")
+    kotlin("jvm") version("2.1.20")
 }
 
 class ModData {
@@ -48,6 +48,10 @@ loom {
         }
     }
 
+    runConfigs {
+        removeIf { it.environment == "server" }
+    }
+
     runConfigs.all {
         ideConfigGenerated(stonecutter.current.isActive)
         vmArgs("-Dmixin.debug.export=true")
@@ -55,15 +59,15 @@ loom {
     }
 }
 
-val java = if (stonecutter.compare(mcVersion, "1.20.6") >= 0) 21 else 17
+val targetJava = 21
 
 java {
-    targetCompatibility = JavaVersion.toVersion(java)
-    sourceCompatibility = JavaVersion.toVersion(java)
+    targetCompatibility = JavaVersion.toVersion(targetJava)
+    sourceCompatibility = JavaVersion.toVersion(targetJava)
 }
 
 kotlin {
-    jvmToolchain(java)
+    jvmToolchain(targetJava)
 }
 
 tasks.processResources {
