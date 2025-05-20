@@ -49,6 +49,4 @@ Unfortunately, you can't fully opt out of mixins (which allow you to modify vani
 This template is licensed under the [Unlicense](/LICENSE).<br>
 You can license your mod (based on this template) however you like, and you don't need to reference back to this template in any way.
 
-[^1]: https://github.com/orgs/community/discussions/159749
-
 [Codeberg]: https://codeberg.org/nobaboy/FabricModTemplate
